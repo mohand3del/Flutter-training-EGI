@@ -1,0 +1,21 @@
+import 'dart:io';
+
+void main() {
+  Map<String, String> birthdays = {
+    "Albert Einstein": "03/14/1879",
+    "Benjamin Franklin": "01/17/1706",
+    "Ada Lovelace": "12/10/1815",
+  };
+
+  print("Welcome to the birthday dictionary. We know the birthdays of:");
+  birthdays.keys.forEach((name) => print(name));
+  
+  print("Who's birthday do you want to look up?");
+  String name = stdin.readLineSync();
+
+  if (birthdays.containsKey(name)) {
+    print("$name birthday is ${birthdays[name]}.");
+  } else {
+    print("we don't have the birthday information for $name.");
+  }
+}
